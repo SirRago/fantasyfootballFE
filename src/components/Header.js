@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Button } from 'react-bootstrap'
 import RegisterModal from './RegisterModal'
 
 export default class Header extends React.Component {
@@ -22,8 +22,13 @@ export default class Header extends React.Component {
 
   render() {
     return (
-      <div>
-          <RegisterModal isOpen={this.state.openModal} closeModal={this.closeRegistrationModal} />
+      <div className='ffheader'>
+        <img src={require('../../res/footballbackground.jpeg')}
+              className='top-background'></img>
+              
+              
+              
+        {/*<RegisterModal isOpen={this.state.openModal} closeModal={this.closeRegistrationModal} />
         <Row className='header-parent'>
           <Col xs={1} className='brand-name-tab'>
           </Col>
@@ -46,7 +51,7 @@ export default class Header extends React.Component {
                 <div className='header-tab-text'>Login</div>
             </Col>
           </div>
-        </Row>
+        </Row>*/}
       </div>
     )
   }
