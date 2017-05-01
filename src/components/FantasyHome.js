@@ -4,15 +4,26 @@ import logo from '../../res/logo.svg';
 import Header from './Header'
 import Lobby from './Lobby'
 import '../App.css';
+var WebStorage = require('react-webstorage')
 
 class FantasyHome extends Component {
   constructor(props) {
     super(props)
+    this.webStorage = new WebStorage(window.sessionStorage);
+
+    var key = this.webStorage.getItem('auth_key_GGF');
+    if(key == null){
+      key=''
+    }
+
+    console.log('key =  ', key)
     this.state = {
       loggedIn: false,
-      renderedScreen:'home'
+      renderedScreen:'home',
+      authKey:key
     }
     this.openLobby = this.openLobby.bind(this)
+    this.updateAuthKey = this.updateAuthKey.bind(this)
 
   }
 
@@ -22,7 +33,14 @@ class FantasyHome extends Component {
     })
   }
 
+  updateAuthKey(key){
+    this.setState({
+      authKey:key
+    })
+  }
+
   render() {
+    console.log("AUTH KEY:", this.state.authKey)
     var screenDisplay = null
 
     switch(this.state.renderedScreen) {
@@ -39,7 +57,8 @@ class FantasyHome extends Component {
 
     return (
       <div className="App">
-        <Header/>         
+        <Header  authKey={this.state.authKey} updateAuthKey={this.updateAuthKey}/> 
+     
            <Row>
             <Col>
               <Button className='menu-btn blue' onClick={(() => {      ;       ;})}>Home</Button>
@@ -52,7 +71,9 @@ class FantasyHome extends Component {
             </Col>
           </Row>
 
+          <div >
           {screenDisplay}
+          </div>
 
 
 

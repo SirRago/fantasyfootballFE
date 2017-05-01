@@ -22,7 +22,8 @@ export default class RegisterModal extends React.Component {
         var passwordConfirmText = ReactDOM.findDOMNode(this.passwordConfirmText).value
         var emailText = ReactDOM.findDOMNode(this.emailText).value
         var emailConfirmText = ReactDOM.findDOMNode(this.emailConfirmText).value
-        alert("user " + usernameText)
+
+        
         this.closeModal()
     }
 
