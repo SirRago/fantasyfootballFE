@@ -1,12 +1,15 @@
 import React from 'react'
 import { Row, Col, Modal, FormGroup, FormControl, Button, Form, Glyphicon } from 'react-bootstrap'
 import ReactDOM from 'react-dom'
+import axios from 'axios'
 
 export default class RegisterModal extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            err:'',
+            stuff:'',
+            registerSent:false
         }
     }
 
@@ -22,9 +25,39 @@ export default class RegisterModal extends React.Component {
         var passwordConfirmText = ReactDOM.findDOMNode(this.passwordConfirmText).value
         var emailText = ReactDOM.findDOMNode(this.emailText).value
         var emailConfirmText = ReactDOM.findDOMNode(this.emailConfirmText).value
+        var errMessage = ''
 
+        if(usernameText.length > 25 || usernameText == 0){errMessage+='Username must be 1-25 characters\n'}
+        if(passwordText.length > 25 || passwordText == 0){errMessage+='Password must be 1-25 characters\n '}
+        if(passwordText != passwordConfirmText){errMessage+='Password does not match confirmation password\n '}
+        if(emailText != emailConfirmText){errMessage+='Email does not match confirmation email\n '}
+
+      axios.post('http://localhost:5000/api/v1/register', {
+        username: usernameText,
+        password: passwordText,
+        email:emailText 
+    })
+      .then((data) => {
+        var data = {}
+        data.authKey = 'key from data'
+        this.setState({
+            stuff:data['data']['status'] + " " + data['data']['message'],
+            err:errMessage
+        })
+
+        // this.webStorage.setItem('auth_key_GGF', data.authKey);
+        // this.webStorage.setItem('username_GGF', userEntered);
         
-        this.closeModal()
+      })
+      .catch((err) => {
+        var data = {}
+        data.authKey = 'key from data'
+        // this.webStorage.setItem('auth_key_GGF', data.authKey);
+        // this.webStorage.setItem('username_GGF', userEntered);
+        
+
+      })
+
     }
 
 
@@ -33,7 +66,9 @@ export default class RegisterModal extends React.Component {
 
         var badInputAlert= null
 
-        var formData = (<Form>
+        var formData 
+        if (this.state.registerSent == false ){
+        formData = (<Form>
             {/*<div className='feedback-icon-div'>
 
         </div>*/}
@@ -85,6 +120,7 @@ export default class RegisterModal extends React.Component {
                 </FormGroup>
             </div>
         </Form>)
+    }
         return (
             <Modal
                 show={this.props.isOpen}

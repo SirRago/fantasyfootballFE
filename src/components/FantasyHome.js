@@ -11,19 +11,18 @@ class FantasyHome extends Component {
     super(props)
     this.webStorage = new WebStorage(window.sessionStorage);
 
-    var key = this.webStorage.getItem('auth_key_GGF');
-    if(key == null){
-      key=''
-    }
+    // var key = this.webStorage.getItem('auth_key_GGF');
+    // if(key == null){
+    //   key=''
+    // }
 
-    console.log('key =  ', key)
+    // console.log('key =  ', key)
     this.state = {
       loggedIn: false,
-      renderedScreen:'home',
-      authKey:key
+      renderedScreen:'home'
     }
     this.openLobby = this.openLobby.bind(this)
-    this.updateAuthKey = this.updateAuthKey.bind(this)
+    this.loginUserMain = this.loginUserMain.bind(this)
 
   }
 
@@ -33,11 +32,12 @@ class FantasyHome extends Component {
     })
   }
 
-  updateAuthKey(key){
+  loginUserMain(login){
     this.setState({
-      authKey:key
+      loggedIn: login
     })
   }
+
 
   render() {
     console.log("AUTH KEY:", this.state.authKey)
@@ -57,7 +57,7 @@ class FantasyHome extends Component {
 
     return (
       <div className="App">
-        <Header  authKey={this.state.authKey} updateAuthKey={this.updateAuthKey}/> 
+        <Header  authKey={this.state.authKey} loginUserMain={this.loginUserMain}/> 
      
            <Row>
             <Col>
