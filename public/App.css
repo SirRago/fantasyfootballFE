@@ -806,3 +806,7 @@ tbody tr:hover {
 	margin-right: 10px !important;
 	text-decoration: none !important;
 }
+
+.registrationErr{
+	color: #BB0000;
+}
