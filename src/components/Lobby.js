@@ -58,9 +58,67 @@ export default class Header extends React.Component {
                 </thead>
                 <tbody>
                     {singleContests}
+                    {footer}
                 </tbody>
             </table>
         )
+
+        var footer = (
+            <div className="footer-top">
+                <div>
+                    <h3>Fantasy Cheat Sheets</h3>
+                    <ul>
+                        <li>
+                            <a href="http://www.google.com">Google</a>
+                            <br></br>
+                            <span>Google Search Engine</span>
+                        </li>
+                        <br></br>
+                        <li>
+                            <a href="http://www.yahoo.com">Yahoo</a>
+                            <br></br>
+                            <span>Yahoo Search Engine</span>
+                        </li>
+                    </ul>
+                </div> 
+
+                <div>
+                    <h3 style={{textAlign:'center'}}>Contact Us</h3>
+                    <ul>
+                        <li style={{textAlign:'center'}}>
+                            <a href="http://www.google.com">Google</a>
+                            <br></br>
+                            <span>Google Search Engine</span>
+                        </li>
+                        <br></br>
+                        <li>
+                            <a href="http://www.yahoo.com">Yahoo</a>
+                            <br></br>
+                            <span>Yahoo Search Engine</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Policies</h3>
+                    <ul>
+                        <li>
+                            <a href="http://www.google.com">Google</a>
+                            <br></br>
+                            <span>Google Search Engine</span>
+                        </li>
+                        <br></br>
+                        <li>
+                            <a href="http://www.yahoo.com">Yahoo</a>
+                            <br></br>
+                            <span>Yahoo Search Engine</span>
+                        </li>
+                    </ul>
+                </div>  
+            </div>    
+        )
+
+        
 
 
         return (
@@ -82,8 +140,8 @@ export default class Header extends React.Component {
                     </Row>
 
                    {contestTable}
+                   {footer}
                 </div>
-
         )
     }
 }

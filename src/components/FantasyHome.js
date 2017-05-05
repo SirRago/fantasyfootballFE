@@ -9,6 +9,7 @@ var WebStorage = require('react-webstorage')
 class FantasyHome extends Component {
   constructor(props) {
     super(props)
+    //What does the following code do?
     this.webStorage = new WebStorage(window.sessionStorage);
 
     // var key = this.webStorage.getItem('auth_key_GGF');
@@ -21,15 +22,21 @@ class FantasyHome extends Component {
       loggedIn: false,
       renderedScreen:'home'
     }
+    //What do the following 2 lines of code do?
     this.openLobby = this.openLobby.bind(this)
     this.loginUserMain = this.loginUserMain.bind(this)
+    this.Darko = 5;
 
   }
 
   openLobby(){
+    console.log("output: " + this.state.loggedIn)
+    console.log("output: " + this.state.renderedScreen)
     this.setState({
       renderedScreen:'lobby'
     })
+    console.log("output: " + this.Darko)
+    console.log("output: " + this.openLobby)
   }
 
   loginUserMain(login){
@@ -41,6 +48,7 @@ class FantasyHome extends Component {
 
   render() {
     console.log("AUTH KEY:", this.state.authKey)
+    console.log("render output: " + this.state.renderedScreen)
     var screenDisplay = null
 
     switch(this.state.renderedScreen) {
@@ -51,7 +59,7 @@ class FantasyHome extends Component {
         break;
     case "Apple":
         break;
-}
+    }
 
 
 
@@ -62,7 +70,7 @@ class FantasyHome extends Component {
            <Row>
             <Col>
               <Button className='menu-btn blue' onClick={(() => {      ;       ;})}>Home</Button>
-              <Button className='menu-btn blue' onClick={(() => {  this.openLobby()    ;       ;})}>Lobby</Button>
+              <Button className='menu-btn blue' onClick={(this.openLobby)}>Lobby</Button>
               <Button className='menu-btn blue' onClick={(() => {      ;       ;})}>Rules</Button>
               <Button className='menu-btn blue' onClick={(() => {      ;       ;})}>About Us</Button>
               <Button className='menu-btn blue' onClick={(() => {      ;       ;})}>My Account</Button>

@@ -810,3 +810,10 @@ tbody tr:hover {
 .registrationErr{
 	color: #BB0000;
 }
+
+.footer-top{
+	background: #fff;
+	font-size: 1.05em;
+	font-family: "Open Sans",sans-serif;
+	display: flex;
+}
