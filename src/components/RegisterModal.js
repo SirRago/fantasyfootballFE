@@ -11,6 +11,8 @@ export default class RegisterModal extends React.Component {
             stuff:'',
             registerSent:false
         }
+        this.registerUser = this.registerUser.bind(this)
+        this.closeModal = this.closeModal.bind(this)
     }
 
     closeModal() {
@@ -202,8 +204,8 @@ export default class RegisterModal extends React.Component {
                     {formData}
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button className='close-registration-btn' onClick={(() => { this.closeModal() })}>Close</Button>
-                    <Button className='confirm-registration-btn' onClick={(() => { this.registerUser() })}>Register</Button>
+                    <Button className='close-registration-btn' onClick={this.closeModal}>Close</Button>
+                    <Button className='confirm-registration-btn' onClick={this.registerUser}>Register</Button>
                 </Modal.Footer>
             </Modal>
         )

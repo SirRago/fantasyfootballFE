@@ -62,7 +62,7 @@ class FantasyHome extends Component {
            <Row>
             <Col>
               <Button className='menu-btn blue' onClick={(() => {      ;       ;})}>Home</Button>
-              <Button className='menu-btn blue' onClick={(() => {  this.openLobby()    ;       ;})}>Lobby</Button>
+              <Button className='menu-btn blue' onClick={this.openLobby}>Lobby</Button>
               <Button className='menu-btn blue' onClick={(() => {      ;       ;})}>Rules</Button>
               <Button className='menu-btn blue' onClick={(() => {      ;       ;})}>About Us</Button>
               <Button className='menu-btn blue' onClick={(() => {      ;       ;})}>My Account</Button>
