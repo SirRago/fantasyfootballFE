@@ -675,6 +675,7 @@
 .lobby {
 	position:relative;
 	height: 700px !important;
+	color:black;
 
 }
 
@@ -841,3 +842,69 @@ tbody tr:hover {
     color: #e4e4e4;
 
 }
+
+/*Below is for the header taken from Fanduel*/
+
+.global-header {
+    height: 66px;
+    background: #1493ff;
+    color: #fff;
+    font-size: 14px;
+		opacity:20;
+}
+
+.global-header-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.primary-nav {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+}
+
+.primary-nav-list {
+    background: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+    position: static;
+}
+
+.primary-nav-item {
+    border: none;
+    margin-left: 0;
+    width: auto;
+}
+
+.header-referral-center {
+    align-items: center;
+		color: #fff;
+		text-align: center;
+		font-family: "Proxima-Nova", Helvetica, Arial, sans-serif;
+}
+
+br {
+   display: block;
+   margin: -3px 0;
+}
+
+.header-button{
+  font-size: 14px !important;
+  color: #fff !important;
+  position: relative !important;
+	background:none !important; 
+  border:none !important;
+	padding:none !important;
+}
+

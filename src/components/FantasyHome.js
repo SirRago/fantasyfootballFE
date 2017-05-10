@@ -67,7 +67,7 @@ class FantasyHome extends Component {
       <div className="App">
         <Header  authKey={this.state.authKey} loginUserMain={this.loginUserMain}/> 
      
-           <Row>
+           {/*<Row>
             <Col>
               <Button className='menu-btn blue' onClick={(() => {      ;       ;})}>Home</Button>
 
@@ -81,7 +81,7 @@ class FantasyHome extends Component {
               <Button className='menu-btn blue' onClick={(() => {      ;       ;})}>My Leagues</Button>
               <Button className='menu-btn blue' onClick={(() => {      ;       ;})}>Help/FAQ</Button>            
             </Col>
-          </Row>
+          </Row>*/}
 
           <div >
           {screenDisplay}
