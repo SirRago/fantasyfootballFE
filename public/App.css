@@ -810,3 +810,34 @@ tbody tr:hover {
 .registrationErr{
 	color: #BB0000;
 }
+
+/*.footer-top{
+	background: #fff;
+	font-size: 1.05em;
+	font-family: "Open Sans",sans-serif;
+	display: flex;
+}*/
+
+.footer {
+    background-color: #383838;
+		height: 500px;
+}
+
+.footer-columns {
+	  text-align: left;
+
+		border-bottom: 1px solid #4c4c4c;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #e4e4e4;
+}
+
+.footer-p {
+	  text-align: left;
+
+		border-bottom: none;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #e4e4e4;
+
+}
