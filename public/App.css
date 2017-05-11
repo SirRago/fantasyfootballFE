@@ -514,63 +514,22 @@
 	text-align: center !important;
 }
 
-.glyphicon-ok-circle{
-	color:#aaaaaa !important;
-	font-size: 85px !important;
-	text-align: center !important
-}
+
 
 .glyphicon-thumbs-up{
 	color:#aaaaaa !important;
-	font-size: 85px !important;
-	text-align: center !important
+	font-size: 60px !important;
+	text-align: left !important
 }
 
-.glyphicon-thumbs-down{
-	color: #aaaaaa !important;
-	font-size: 85px !important;
-	text-align: center !important;
-}
-
-.glyphicon-remove-circle:hover {
-	color: #cf102d !important;
-	font-size: 85px;
-	text-align: center !important;
-	cursor:pointer;
-}
-
-.glyphicon-ok-circle:hover{
-	color:#83cc2a !important;
-	font-size: 85px;
-	text-align: center !important;
-	cursor:pointer;
-}
-
-.glyphicon-thumbs-down:hover {
-	color: #cf102d !important;
-	font-size: 85px;
-	text-align: center !important;
-	cursor:pointer;
-}
 
 .glyphicon-thumbs-up:hover{
 	color:#83cc2a !important;
-	font-size: 85px;
-	text-align: center !important;
+	font-size: 60px;
+	text-align: left !important;
 	cursor:pointer;
 }
 
-.glyphicon-thumbs-down-clicked {
-	color: #cf102d !important;
-	font-size: 85px;
-	text-align: center !important;
-}
-
- .glyphicon-thumbs-up-clicked {
-	color:#83cc2a !important;
-	font-size: 85px;
-	text-align: center !important;
-}
 
 .send-feedback-btn{
 	color:#ffffff !important;
@@ -950,6 +909,31 @@ br {
 }
 .logo-container{
 	padding-top: 10px;
+}
+
+
+
+.lobby-choose-sport-button {
+	background-color: #FFFFFF;
+	text-align: center;
+	color: #72a8ff;
+	font-size: 26px;
+	height: 65px;
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+	border-bottom: 2px solid #FFFFFF; 
+}
+
+.lobby-choose-sport-button:hover {
+	background-color: #186cf4 !important;
+	text-align: center;
+	color: #ffffff;
+	font-size: 26px;
+	height: 65px;
+	padding-right: 0px !important;
+	padding-left: 0px !important; 
+  border-bottom: 2px solid #ff8400;
+  margin-bottom: -2px;
 }
 
 

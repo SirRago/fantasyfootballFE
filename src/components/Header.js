@@ -91,8 +91,12 @@ export default class Header extends React.Component {
     return (
       <div className="global-header">
             <div className="global-header-container">
-                <row>
+                <Row>
                     <Col xs={2}>
+                        <div>
+                            <Glyphicon glyph='glyphicon-thumbs-up' className='glyphicon glyphicon-thumbs-up'></Glyphicon>
+                            Good Guy Fantasy
+                        </div>
                     </Col>
 
                     <Col xs={1} className='logo-container'>
@@ -105,7 +109,7 @@ export default class Header extends React.Component {
 
                     <Col xs={3}>
                         <nav className="primary-nav" data-role="global-header-menu">
-                            <row>
+                            <Row>
                               <a className="primary-nav-list" data-role="global-header-menu-content" data-maintab="<?= $m->mainTab ?>" data-rendermode="<?= $m->renderMode?>">
                                 <Col xs={2}>
                                     <h4>
@@ -133,7 +137,7 @@ export default class Header extends React.Component {
                                     </h4>
                                 </Col>
                                </a>
-                              </row>
+                              </Row>
                             </nav>
                         </Col>
 
@@ -142,7 +146,7 @@ export default class Header extends React.Component {
 
                     <Col xs={3}>
                         <nav className="secondary-nav">
-                            <row>
+                            <Row>
                                 <Col xs={4}>
                                     <div className="header-referral-center">
                                         <h4>
@@ -159,14 +163,14 @@ export default class Header extends React.Component {
                                 <Col xs={4} className="funds-button-container">
                                         <Button className='funds-button' onClick={(this.openLobby)}>Add Funds</Button>
                                 </Col>
-                                </row>
+                                </Row>
                         </nav>
                       </Col>
 
-                    <Col xs={3}>
+                    <Col xs={2}>
                     </Col>
                     
-                  </row>
+                  </Row>
 	      </div>
         <div>
         {screenDisplay}
