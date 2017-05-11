@@ -158,13 +158,13 @@ export default class Lobby extends React.Component {
 
                         <Row className = ''>
                             <Col xs={2} className='lobby-choose-sport-button'>
-                                <div style={{borderRight:'10px',height:'100%'}} onClick={this.show25contests} >$25</div>
+                                <div onClick={this.show25contests} >$25</div>
                             </Col>
                             <Col xs={2} className='lobby-choose-sport-button'>
                                 <div onClick={this.show50contests}>$50</div>
                             </Col>
                             <Col xs={2} className='lobby-choose-sport-button'>
-                                <div style={{borderRight:'1px'}} onClick={this.show100contests}>$100</div>
+                                <div onClick={this.show100contests}>$100</div>
                             </Col>
                             <Col xs={2} className='lobby-choose-sport-button'>
                                 <div onClick={this.show250contests}>$250</div>

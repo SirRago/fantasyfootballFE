@@ -918,10 +918,14 @@ br {
 	text-align: center;
 	color: #72a8ff;
 	font-size: 26px;
-	height: 65px;
+	height: 45px;
 	padding-right: 0px !important;
 	padding-left: 0px !important;
 	border-bottom: 2px solid #FFFFFF; 
+	border-right: 1px #808080 inset;
+	border-left: 1px #808080;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .lobby-choose-sport-button:hover {
@@ -929,11 +933,11 @@ br {
 	text-align: center;
 	color: #ffffff;
 	font-size: 26px;
-	height: 65px;
+	height: 45px;
 	padding-right: 0px !important;
 	padding-left: 0px !important; 
   border-bottom: 2px solid #ff8400;
-  margin-bottom: -2px;
+	
 }
 
 
