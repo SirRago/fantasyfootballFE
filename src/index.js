@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 import 'bootstrap/dist/css/bootstrap.css'
-import FantasyHome from './components/FantasyHome';
+import Header from './components/Header';
 
 ReactDOM.render(
-  <FantasyHome />,
+  <Header />,
   document.getElementById('root')
 );

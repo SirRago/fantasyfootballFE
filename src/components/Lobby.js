@@ -3,7 +3,6 @@ import React from 'react'
 import { Row, Col, Button } from 'react-bootstrap'
 import RegisterModal from './RegisterModal'
 import Footer from './Footer'
-Footer
 
 var contestData2 = [ {cost:'$10', name:'Big Event #1', duration:'One Year', lineup:'Standard Football', draft: 'August 27th, 2017', trade:'Yes - Full season', host:'smooth',members:'9 of 16 joined'} , 
 {cost:'$25', name:'Big Event #1', duration:'One Year', lineup:'Standard Football', draft: 'August 27th, 2017', trade:'Yes - Full season', host:'smooth',members:'7 of 8 joined'},

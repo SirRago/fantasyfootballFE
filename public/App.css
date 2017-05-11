@@ -83,7 +83,7 @@
 	position: relative;
 	top: 14px;
 	height: 36px;
-	opacity: 0.2;
+	opacity: .2;
 	border: solid 1px #ffffff;
 }
 
@@ -809,7 +809,8 @@ tbody tr:hover {
     background: #1493ff;
     color: #fff;
     font-size: 14px;
-		opacity:20;
+		opacity:1;
+		position:relative;
 }
 
 .global-header-container {
@@ -911,7 +912,15 @@ br {
 	padding-top: 10px;
 }
 
+/*Below is the CSS for myAccount Page*/
 
+.myAccount{
+	color: black !important;
+}
+
+.user-image{
+	border-radius:500px;
+}
 
 .lobby-choose-sport-button {
 	background-color: #FFFFFF;

@@ -5,6 +5,7 @@ import RegisterModal from './RegisterModal'
 import ReactDOM from 'react-dom'
 import axios from 'axios'
 import Lobby from './Lobby'
+import MyAccount from './MyAccount'
 var WebStorage = require('react-webstorage')
 
 export default class Header extends React.Component {
@@ -13,11 +14,13 @@ export default class Header extends React.Component {
     this.webStorage = new WebStorage(window.sessionStorage);
 
     this.state = {
-      openModal: false
+      openModal: false,
+      renderedScreen: 'lobby'
     }
     this.openRegistrationModal = this.openRegistrationModal.bind(this)
     this.closeRegistrationModal = this.closeRegistrationModal.bind(this)
     this.openLobby = this.openLobby.bind(this);
+    this.myAccount = this.myAccount.bind(this);
   }
 
   openRegistrationModal() {
@@ -30,7 +33,13 @@ export default class Header extends React.Component {
 
   openLobby(){
     this.setState({
-      renderedScreen:'lobby'
+      renderedScreen:'lobby',
+    })
+  }
+
+  myAccount(){
+    this.setState({
+      renderedScreen:'myAccount',
     })
   }
 
@@ -79,7 +88,8 @@ export default class Header extends React.Component {
       case 'lobby':
         screenDisplay=(<Lobby/>)
           break;
-      case "Orange":
+      case "myAccount":
+        screenDisplay=(<MyAccount/>)
           break;
       case "Apple":
           break;
@@ -89,6 +99,7 @@ export default class Header extends React.Component {
 
 
     return (
+<<<<<<< Updated upstream
       <div className="global-header">
             <div className="global-header-container">
                 <Row>
@@ -103,10 +114,51 @@ export default class Header extends React.Component {
                         <section className="logo-container">
                             <a href="/" target="_self">
                                 <span href="/" className="logo">SICK LOGO</span>
+=======
+      <div className="global-header global-header-container">
+            <Row className="global-header-container global-header">
+                <Col xs={2}>
+                </Col>
+
+                <Col xs={1} className='logo-container'>
+                    <section className="logo-container">
+                        <a href="/" target="_self">
+                            <span href="/" className="logo">SICK LOGO</span>
+                        </a>
+                    </section>
+                </Col>
+
+                <Col xs={3}>
+                    <nav className="primary-nav" data-role="global-header-menu">
+                        <Row>
+                            <a className="primary-nav-list" data-role="global-header-menu-content" data-maintab="<?= $m->mainTab ?>" data-rendermode="<?= $m->renderMode?>">
+                            <Col xs={2}>
+                                <h4>
+                                    <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>Lobby</span></a>
+                                </h4>
+                            </Col>
+                            <Col xs={3}>
+                                <h4>
+                                    <a onClick={this.myAccount} target="_self" className="primary-nav-item"><span>My Account</span></a>
+                                </h4>
+                            </Col>
+                            <Col xs={2}>
+                                <h4>
+                                    <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>News</span></a>
+                                </h4>
+                            </Col>
+                            <Col xs={3}>
+                                <h4>
+                                    <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>About Us</span></a>
+                                </h4>
+                            </Col>
+>>>>>>> Stashed changes
                             </a>
-                        </section>
+                            </Row>
+                        </nav>
                     </Col>
 
+<<<<<<< Updated upstream
                     <Col xs={3}>
                         <nav className="primary-nav" data-role="global-header-menu">
                             <Row>
@@ -132,9 +184,20 @@ export default class Header extends React.Component {
                                     </h4>
                                 </Col>
                                 <Col xs={2}>
+=======
+                <Col xs={1}>
+                </Col>
+
+                <Col xs={3}>
+                    <nav className="secondary-nav">
+                        <Row>
+                            <Col xs={4}>
+                                <div className="header-referral-center">
+>>>>>>> Stashed changes
                                     <h4>
-                                        <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>Friends</span></a>
+                                        <a onClick={this.openLobby} target="_self" className="primary-nav-item">Earn Cash<br></br><span style={{fontSize: 11}}>Refer Friends</span></a>
                                     </h4>
+<<<<<<< Updated upstream
                                 </Col>
                                </a>
                               </Row>
@@ -172,6 +235,26 @@ export default class Header extends React.Component {
                     
                   </Row>
 	      </div>
+=======
+                                </div>
+                            </Col>
+                            <Col xs={4} className="balance">
+                                <div>
+                                    <span id="balance" className="balance-money">$0</span><br></br>
+                                    <span>Balance</span>
+                                </div>
+                            </Col>
+                            <Col xs={4} className="funds-button-container">
+                                    <Button className='funds-button' onClick={(this.openLobby)}>Add Funds</Button>
+                            </Col>
+                        </Row>
+                    </nav>
+                    </Col>
+
+                <Col xs={3}>
+                </Col>
+            </Row>
+>>>>>>> Stashed changes
         <div>
         {screenDisplay}
         </div>
