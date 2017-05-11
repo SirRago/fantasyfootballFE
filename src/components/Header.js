@@ -91,67 +91,82 @@ export default class Header extends React.Component {
     return (
       <div className="global-header">
             <div className="global-header-container">
-                  <section className="logo-container">
-                      <a href="/" target="_self" className="header-link">
-                          <span href="/" className="logo logo-tagline">Logo</span>
-                      </a>
-                  </section>
+                <row>
+                    <Col xs={2}>
+                    </Col>
 
+                    <Col xs={1} className='logo-container'>
+                        <section className="logo-container">
+                            <a href="/" target="_self">
+                                <span href="/" className="logo">SICK LOGO</span>
+                            </a>
+                        </section>
+                    </Col>
+
+                    <Col xs={3}>
                         <nav className="primary-nav" data-role="global-header-menu">
                             <row>
                               <a className="primary-nav-list" data-role="global-header-menu-content" data-maintab="<?= $m->mainTab ?>" data-rendermode="<?= $m->renderMode?>">
                                 <Col xs={2}>
-                                    <h4 className="primary-nav-item">
-                                        <Button onClick={this.openLobby} className="header-button"><span>Lobby</span></Button>
+                                    <h4>
+                                        <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>Lobby</span></a>
                                     </h4>
                                 </Col>
                                 <Col xs={3}>
-                                    <h4 className="primary-nav-item">
-                                        <a href="/upcoming" className="primary-nav-anchor link-upcoming-contests" target="_self"><span className="link-text">Upcoming</span></a>
+                                    <h4>
+                                        <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>Upcoming</span></a>
                                     </h4>
                                 </Col>
                                 <Col xs={2}>
-                                    <h4 className="primary-nav-item">
-                                        <a href="/live" className="primary-nav-anchor link-live-contests" target="_self"><span className="link-text">Live</span></a>
+                                    <h4>
+                                        <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>Live</span></a>
                                     </h4>
                                 </Col>
                                 <Col xs={2}>
-                                    <h4 className="primary-nav-item">
-                                        <a href="/p/MyEntryHistory" className="primary-nav-anchor link-historical-contests" target="_self"><span className="link-text">History</span></a>
+                                    <h4>
+                                        <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>History</span></a>
                                     </h4>
                                 </Col>
                                 <Col xs={2}>
-                                    <h4 class="primary-nav-item">
-                                        <a href="/leagues" className="primary-nav-anchor link-friends-mode" target="_self"><span className="link-text">Friends</span></a>
+                                    <h4>
+                                        <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>Friends</span></a>
                                     </h4>
                                 </Col>
-                              </a>
-                            </row>
-                        </nav>
+                               </a>
+                              </row>
+                            </nav>
+                        </Col>
 
-                      <nav class="secondary-nav">
-                          <row>
-                              <Col xs={8}>
-                                <div className="header-referral-center">
-                                    <a href="/referrals" target="_self" className="primary-nav-anchor">
-                                        Earn Cash<br></br>
-                                        <span style={{fontSize:12}}>Refer friends</span>
-                                    </a>
-                                </div>
-                            </Col>
-                            <Col xs={2}>
-                                <div className="header-add-funds user-balance-block">
-                                    <div className="user-balance">
-                                        <span id="balance" className="balance-header">$0.00</span>
-                                        <span className="balance-label">Balance</span>
+                    <Col xs={1}>
+                    </Col>
+
+                    <Col xs={3}>
+                        <nav className="secondary-nav">
+                            <row>
+                                <Col xs={4}>
+                                    <div className="header-referral-center">
+                                        <h4>
+                                            <a onClick={this.openLobby} target="_self" className="primary-nav-item">Earn Cash<br></br><span style={{fontSize: 11}}>Refer Friends</span></a>
+                                        </h4>
                                     </div>
-                                    <a href="/p/AddFunds" target="_self" className="button primary tiny link-add-funds">Add funds</a>
-                                </div>
-                            </Col>
-                            </row>
-                          
-                      </nav>
-                  
+                                </Col>
+                                <Col xs={4} className="balance">
+                                    <div>
+                                        <span id="balance" className="balance-money">$0</span><br></br>
+                                        <span>Balance</span>
+                                    </div>
+                                </Col>
+                                <Col xs={4} className="funds-button-container">
+                                        <Button className='funds-button' onClick={(this.openLobby)}>Add Funds</Button>
+                                </Col>
+                                </row>
+                        </nav>
+                      </Col>
+
+                    <Col xs={3}>
+                    </Col>
+                    
+                  </row>
 	      </div>
         <div>
         {screenDisplay}
