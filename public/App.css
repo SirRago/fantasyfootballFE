@@ -804,7 +804,7 @@ tbody tr:hover {
 
 /*Below is for the header taken from Fanduel*/
 
-.global-header {
+.global-header-container {
     height: 66px;
     background: #1493ff;
     color: #fff;
@@ -813,21 +813,8 @@ tbody tr:hover {
 		position:relative;
 }
 
-.global-header-container {
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-/*.primary-nav {
-    -webkit-box-flex: 0;
-    -ms-flex: none;
-    flex: none;
-}*/
-
 .primary-nav-list {
     background: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -860,7 +847,7 @@ tbody tr:hover {
 	padding-top: 5px;
 }
 
-br {
+.new-br {
    display: block;
    margin: -3px 0;
 }
@@ -899,7 +886,7 @@ br {
 
 .funds-button{
 	color:white !important;
-	background-color: #36c565 !important;
+	background-color: #2cb459 !important;
 	border: none !important;
 	position: absolute; left: 0 !important;
 }
@@ -909,18 +896,46 @@ br {
 	font-size: 18px;
 }
 .logo-container{
-	padding-top: 10px;
+	padding-top: 3px;
+	padding-left: 0px !important;
 }
 
 /*Below is the CSS for myAccount Page*/
 
 .myAccount{
 	color: black !important;
+	padding-top: 30px;
+}
+
+.myAccount-header{
+	background: white;
+}
+
+.myAccount-body{
+	background: lightgrey;
+	height:500px;
 }
 
 .user-image{
-	border-radius:500px;
+	border-radius:750px;
 }
+
+.balance-containter {
+    background: linear-gradient(135deg, #3dd96f 0%, #3dd96f 60%, #36c565 60%, #36c565 80%, #2cb459 80%, #2cb459 100%) !important;
+		height:75px !important;
+		margin-bottom: 0px !important;
+		margin-top: 30px !important;
+		flex-direction: column;
+		display:flex;
+		padding-top:20px;
+}
+
+.white-text{
+	color: white;
+	font-size: 16px;
+}
+
+/*Below is code for updated lobby*/
 
 .lobby-choose-sport-button {
 	background-color: #FFFFFF;
@@ -948,6 +963,7 @@ br {
   border-bottom: 2px solid #ff8400;
 	
 }
+
 
 
 

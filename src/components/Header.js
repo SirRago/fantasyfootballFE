@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom'
 import axios from 'axios'
 import Lobby from './Lobby'
 import MyAccount from './MyAccount'
+//import AboutUs from './AboutUs'
 var WebStorage = require('react-webstorage')
 
 export default class Header extends React.Component {
@@ -15,12 +16,13 @@ export default class Header extends React.Component {
 
     this.state = {
       openModal: false,
-      renderedScreen: 'lobby'
+      renderedScreen: 'lobby',
     }
     this.openRegistrationModal = this.openRegistrationModal.bind(this)
     this.closeRegistrationModal = this.closeRegistrationModal.bind(this)
     this.openLobby = this.openLobby.bind(this);
-    this.myAccount = this.myAccount.bind(this);
+    this.openAccount = this.openAccount.bind(this);
+    this.openAbout = this.openAbout.bind(this);
   }
 
   openRegistrationModal() {
@@ -33,13 +35,19 @@ export default class Header extends React.Component {
 
   openLobby(){
     this.setState({
-      renderedScreen:'lobby',
+      renderedScreen:'lobby'
     })
   }
 
-  myAccount(){
+  openAccount(){
     this.setState({
-      renderedScreen:'myAccount',
+      renderedScreen:'account'
+    })
+  }
+
+  openAbout(){
+    this.setState({
+      renderedScreen:'about_us'
     })
   }
 
@@ -88,10 +96,11 @@ export default class Header extends React.Component {
       case 'lobby':
         screenDisplay=(<Lobby/>)
           break;
-      case "myAccount":
+      case 'account':
         screenDisplay=(<MyAccount/>)
           break;
-      case "Apple":
+      case "About":
+      //screenDisplay=(<AboutUs/>)
           break;
     }
 
@@ -99,97 +108,32 @@ export default class Header extends React.Component {
 
 
     return (
-      <div className="global-header">
+      <div className="view">
             <div className="global-header-container">
                 <Row>
-                    <Col xs={2}>
-                        <div>
-                            <Glyphicon glyph='glyphicon-thumbs-up' className='glyphicon glyphicon-thumbs-up'></Glyphicon>
-                            Good Guy Fantasy
-                        </div>
-                    </Col>
-
-                    <Col xs={1} className='logo-container'>
-                        <section className="logo-container">
-                            <a href="/" target="_self">
-                                <span href="/" className="logo">SICK LOGO</span>
-      <div className="global-header global-header-container">
-            <Row className="global-header-container global-header">
-                <Col xs={2}>
-                </Col>
-
-                <Col xs={1} className='logo-container'>
-                    <section className="logo-container">
-                        <a href="/" target="_self">
-                            <span href="/" className="logo">SICK LOGO</span>
-                        </a>
-                    </section>
-                </Col>
-
-                <Col xs={3}>
-                    <nav className="primary-nav" data-role="global-header-menu">
-                        <Row>
-                            <a className="primary-nav-list" data-role="global-header-menu-content" data-maintab="<?= $m->mainTab ?>" data-rendermode="<?= $m->renderMode?>">
-                            <Col xs={2}>
-                                <h4>
-                                    <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>Lobby</span></a>
-                                </h4>
-                            </Col>
-                            <Col xs={3}>
-                                <h4>
-                                    <a onClick={this.myAccount} target="_self" className="primary-nav-item"><span>My Account</span></a>
-                                </h4>
-                            </Col>
-                            <Col xs={2}>
-                                <h4>
-                                    <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>News</span></a>
-                                </h4>
-                            </Col>
-                            <Col xs={3}>
-                                <h4>
-                                    <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>About Us</span></a>
-                                </h4>
-                            </Col>
-                            </a>
-                            </Row>
-                        </nav>
+                    <Col xs={1}>
                     </Col>
 
                     <Col xs={3}>
-                        <nav className="primary-nav" data-role="global-header-menu">
+                        <nav>
                             <Row>
                               <a className="primary-nav-list" data-role="global-header-menu-content" data-maintab="<?= $m->mainTab ?>" data-rendermode="<?= $m->renderMode?>">
+                                <Col xs={1} className='logo-container'>
+                                    <img src ={require('../../res/Anonymous_emblem.svg.png')} alt='memberpic' style={{height:40, width:40}} className='user-image'/>
+                                </Col>
                                 <Col xs={2}>
                                     <h4>
-                                        <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>Lobby</span></a>
+                                        <a onClick={this.openLobby} className="primary-nav-item"><span>Lobby</span></a>
                                     </h4>
                                 </Col>
                                 <Col xs={3}>
                                     <h4>
-                                        <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>Upcoming</span></a>
+                                        <a onClick={this.openAccount}className="primary-nav-item"><span>My Account</span></a>
                                     </h4>
                                 </Col>
-                                <Col xs={2}>
+                                <Col xs={4}>
                                     <h4>
-                                        <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>Live</span></a>
-                                    </h4>
-                                </Col>
-                                <Col xs={2}>
-                                    <h4>
-                                        <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>History</span></a>
-                                    </h4>
-                                </Col>
-                                <Col xs={2}>
-                <Col xs={1}>
-                </Col>
-
-                <Col xs={3}>
-                    <nav className="secondary-nav">
-                        <Row>
-                            <Col xs={4}>
-                                <div className="header-referral-center">
-                                    <h4>
-                                        <a onClick={this.openLobby} target="_self" className="primary-nav-item">Earn Cash<br></br><span style={{fontSize: 11}}>Refer Friends</span></a>
+                                        <a onClick={this.openAbout} className="primary-nav-item"><span>About Us</span></a>
                                     </h4>
                                 </Col>
                                </a>
@@ -197,7 +141,7 @@ export default class Header extends React.Component {
                             </nav>
                         </Col>
 
-                    <Col xs={1}>
+                    <Col xs={5}>
                     </Col>
 
                     <Col xs={3}>
@@ -206,7 +150,7 @@ export default class Header extends React.Component {
                                 <Col xs={4}>
                                     <div className="header-referral-center">
                                         <h4>
-                                            <a onClick={this.openLobby} target="_self" className="primary-nav-item">Earn Cash<br></br><span style={{fontSize: 11}}>Refer Friends</span></a>
+                                            <a onClick={this.openLobby} target="_self" className="primary-nav-item">Earn Cash<br className='new-br'></br><span style={{fontSize: 11}}>Refer Friends</span></a>
                                         </h4>
                                     </div>
                                 </Col>
@@ -223,29 +167,11 @@ export default class Header extends React.Component {
                         </nav>
                       </Col>
 
-                    <Col xs={2}>
+                    <Col xs={1}>
                     </Col>
                     
                   </Row>
 	      </div>
-                                </div>
-                            </Col>
-                            <Col xs={4} className="balance">
-                                <div>
-                                    <span id="balance" className="balance-money">$0</span><br></br>
-                                    <span>Balance</span>
-                                </div>
-                            </Col>
-                            <Col xs={4} className="funds-button-container">
-                                    <Button className='funds-button' onClick={(this.openLobby)}>Add Funds</Button>
-                            </Col>
-                        </Row>
-                    </nav>
-                    </Col>
-
-                <Col xs={3}>
-                </Col>
-            </Row>
         <div>
         {screenDisplay}
         </div>
