@@ -99,7 +99,6 @@ export default class Header extends React.Component {
 
 
     return (
-<<<<<<< Updated upstream
       <div className="global-header">
             <div className="global-header-container">
                 <Row>
@@ -114,7 +113,6 @@ export default class Header extends React.Component {
                         <section className="logo-container">
                             <a href="/" target="_self">
                                 <span href="/" className="logo">SICK LOGO</span>
-=======
       <div className="global-header global-header-container">
             <Row className="global-header-container global-header">
                 <Col xs={2}>
@@ -152,13 +150,11 @@ export default class Header extends React.Component {
                                     <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>About Us</span></a>
                                 </h4>
                             </Col>
->>>>>>> Stashed changes
                             </a>
                             </Row>
                         </nav>
                     </Col>
 
-<<<<<<< Updated upstream
                     <Col xs={3}>
                         <nav className="primary-nav" data-role="global-header-menu">
                             <Row>
@@ -184,7 +180,6 @@ export default class Header extends React.Component {
                                     </h4>
                                 </Col>
                                 <Col xs={2}>
-=======
                 <Col xs={1}>
                 </Col>
 
@@ -193,11 +188,9 @@ export default class Header extends React.Component {
                         <Row>
                             <Col xs={4}>
                                 <div className="header-referral-center">
->>>>>>> Stashed changes
                                     <h4>
                                         <a onClick={this.openLobby} target="_self" className="primary-nav-item">Earn Cash<br></br><span style={{fontSize: 11}}>Refer Friends</span></a>
                                     </h4>
-<<<<<<< Updated upstream
                                 </Col>
                                </a>
                               </Row>
@@ -235,7 +228,6 @@ export default class Header extends React.Component {
                     
                   </Row>
 	      </div>
-=======
                                 </div>
                             </Col>
                             <Col xs={4} className="balance">
@@ -254,7 +246,6 @@ export default class Header extends React.Component {
                 <Col xs={3}>
                 </Col>
             </Row>
->>>>>>> Stashed changes
         <div>
         {screenDisplay}
         </div>
