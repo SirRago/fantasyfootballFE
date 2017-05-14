@@ -91,6 +91,7 @@ export default class Header extends React.Component {
     return (
       <div className="global-header">
             <div className="global-header-container">
+                <RegisterModal isOpen={this.state.openModal} closeModal={this.closeRegistrationModal} />
                 <Row>
                     <Col xs={2}>
                         <div>
@@ -133,7 +134,7 @@ export default class Header extends React.Component {
                                 </Col>
                                 <Col xs={2}>
                                     <h4>
-                                        <a onClick={this.openLobby} target="_self" className="primary-nav-item"><span>Friends</span></a>
+                                        <a onClick={this.openRegistrationModal} target="_self" className="primary-nav-item"><span>Friends</span></a>
                                     </h4>
                                 </Col>
                                </a>

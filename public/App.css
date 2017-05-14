@@ -176,13 +176,7 @@
 
 }
 
-.patch-info-drawer-header-text{
-	padding-left: 5px;
-	padding-right: 5px;
-  text-align: center;
-	border-right: '1px solid #868988';
-	border-bottom: '2px solid #868988';
-}
+
 
 .patch-info-drawer-text{
 	border-bottom: '1px solid #868988';
@@ -454,12 +448,12 @@
     background-color: rgba(255, 255, 255, .3);
     padding: 10px;
 }
-.custom-tooltip  .label {
+/*.custom-tooltip  .label {
   margin: 0;
   color: #1b3f60;
   font-weight: 700;
 	font-size: 14px;
-}
+}*/
 
 .dcio-box{
 	border-bottom: 1px solid #dcdcdc;
@@ -948,7 +942,7 @@ br {
   text-align: center;
   color: #bbb;
   border: 1px solid transparent;
-	width:10%;
+	width:12%;
 	font-size:24px;
 	border-bottom: 2px solid #EEEEEE;
 	margin-bottom: 0px !important;
@@ -977,7 +971,7 @@ br {
   border-bottom: 2px solid #FFFFFF;
 	border-right: 2px solid #EEEEEE;
 	border-left: 2px solid #EEEEEE;
-	width:10%;
+	width:12%;
 	font-size:24px;
 	background-color: #FFFFFF;
 	margin-bottom: 0px !important;
@@ -988,6 +982,26 @@ br {
 
 }
 
+.patch-info-drawer-header-text{
+	padding-left: 5px;
+	padding-right: 5px;
+  text-align: center;
+	border-right: '1px solid #868988';
+	border-bottom: '2px solid #868988';
+	font-size:20px;
+}
+
+.contest-info-modal{
+	width: 80% !important;
+}
+
+.contest-info-link{
+	color:#254b6e;
+}
+
+.contest-info-link:hover{
+	cursor: pointer;
+}
 
 
 

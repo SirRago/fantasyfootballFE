@@ -3,7 +3,7 @@ import React from 'react'
 import { Row, Col, Button } from 'react-bootstrap'
 import RegisterModal from './RegisterModal'
 import Footer from './Footer'
-Footer
+import ContestInfoModal from './ContestInfoModal'
 
 var contestData2 = [ {cost:'$10', name:'Big Event #1', duration:'One Year', lineup:'Standard Football', draft: 'August 27th, 2017', trade:'Yes - Full season', host:'smooth',members:'9 of 16 joined'} , 
 {cost:'$25', name:'Big Event #1', duration:'One Year', lineup:'Standard Football', draft: 'August 27th, 2017', trade:'Yes - Full season', host:'smooth',members:'7 of 8 joined'},
@@ -14,13 +14,17 @@ var contestData2 = [ {cost:'$10', name:'Big Event #1', duration:'One Year', line
 {cost:'$1000', name:'The Big THOUSAND!!!', duration:'One Year', lineup:'Standard Football', draft: 'August 10th, 2017', trade:'Yes - Full season', host:'smooth',members:'4 of 4 joined'},
 {cost:'$1000', name:'The Big THOU!!', duration:'One Year', lineup:'Standard Football', draft: 'August 10th, 2017', trade:'Yes - Full season', host:'smooth',members:'4 of 4 joined'}]
 
+
+
 export default class Lobby extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             allContestData:contestData2,
             contestData:contestData2,
-            contestView:25
+            contestView:25,
+            openContestInfoModal:false,
+            contestInfoData:''
         }
         this.show25contests = this.show25contests.bind(this);
         this.show50contests = this.show50contests.bind(this);
@@ -28,7 +32,11 @@ export default class Lobby extends React.Component {
         this.show250contests = this.show250contests.bind(this);
         this.show500contests = this.show500contests.bind(this);
         this.show1000contests = this.show1000contests.bind(this);
+        this.closeContestInfoModal = this.closeContestInfoModal.bind(this);
 
+    }
+    closeContestInfoModal() {
+        this.setState({ openContestInfoModal: false })
     }
 
     show25contests(){
@@ -97,12 +105,11 @@ export default class Lobby extends React.Component {
                         <td className="patch-info-drawer-header-text" >
                             <Button className='join-btn green' >Join</Button>
                         </td>
-                        <td className="patch-info-drawer-header-text" >{item.name}</td>
+                        <td className="patch-info-drawer-header-text" ><label className='contest-info-link' onClick={()=>this.setState({openContestInfoModal:true,contestInfoData:'some data'})} >{item.name}</label></td>
                         <td className="patch-info-drawer-header-text" >{item.duration}</td>
                         <td className="patch-info-drawer-header-text" >{item.lineup}</td>
                         <td className="patch-info-drawer-header-text" >{item.draft}</td>
                         <td className="patch-info-drawer-header-text" >{item.trade}</td>
-                        <td className="patch-info-drawer-header-text" >{item.host}</td>
                         <td className="patch-info-drawer-header-text" >{item.members}</td> 
 
           </tr> 
@@ -114,13 +121,13 @@ export default class Lobby extends React.Component {
                 <thead >
                     <tr>
                         <th  >Join</th>
-                        <th  >Name</th>
-                        <th  >Duration</th>
-                        <th  >Lineup</th>
-                        <th  >Draft</th>
-                        <th  >Trade</th>
-                        <th  >Host </th>
-                        <th  >Members</th>
+                        <th  >Name(click for info)</th>
+                        <th  >Size</th>
+                        <th  >Entry</th>
+                        <th  >Prizes</th>
+                        <th  >Draft Start</th>
+                        <th  >Entered(check) </th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -215,9 +222,11 @@ export default class Lobby extends React.Component {
         return (
 
             //bar up top to choose sport
-            
+           
 
                  <div className='lobby'>
+                     <ContestInfoModal data={this.state.contestInfoData} isOpen={this.state.openContestInfoModal} closeModal={this.closeContestInfoModal} />
+ 
                      <Row style ={{height:'20px'}}>
                      </Row>
 
