@@ -19,7 +19,8 @@ export default class Lobby extends React.Component {
         super(props)
         this.state = {
             allContestData:contestData2,
-            contestData:contestData2
+            contestData:contestData2,
+            contestView:25
         }
         this.show25contests = this.show25contests.bind(this);
         this.show50contests = this.show50contests.bind(this);
@@ -35,7 +36,8 @@ export default class Lobby extends React.Component {
             return e.cost == '$25'
         })
         this.setState({
-            contestData: contests25
+            contestData: contests25,
+            contestView:25
         })
     }
 
@@ -44,7 +46,8 @@ export default class Lobby extends React.Component {
             return e.cost == '$50'
         })
         this.setState({
-            contestData: contests50
+            contestData: contests50,
+            contestView:50
         })
     }
     show100contests(){
@@ -52,7 +55,8 @@ export default class Lobby extends React.Component {
             return e.cost == '$100'
         })
         this.setState({
-            contestData: contests100
+            contestData: contests100,
+            contestView:100
         })
     }
     show250contests(){
@@ -60,7 +64,8 @@ export default class Lobby extends React.Component {
             return e.cost == '$250'
         })
         this.setState({
-            contestData: contests250
+            contestData: contests250,
+            contestView:250
         }) 
     }
     show500contests(){
@@ -68,7 +73,8 @@ export default class Lobby extends React.Component {
             return e.cost == '$500'
         })
         this.setState({
-            contestData: contests500
+            contestData: contests500,
+            contestView:500
         })
     }
     show1000contests(){
@@ -76,7 +82,8 @@ export default class Lobby extends React.Component {
             return e.cost == '$1000'
         })
         this.setState({
-            contestData: contests1000
+            contestData: contests1000,
+            contestView:1000
         })
     }            
 
@@ -122,10 +129,87 @@ export default class Lobby extends React.Component {
             </table>
         )
 
+        let labels = null
 
-            
-
+        switch (this.state.contestView) {
+        case 25:
+            labels=(
+                <Row className = 'label-row'>       
+                    <label className= 'label-input-clicked' onClick={this.show25contests}>$25</label>
+                    <label className= 'label-input' onClick={this.show50contests} >$50</label>
+                    <label className= 'label-input' onClick={this.show100contests} >$100</label>
+                    <label className= 'label-input' onClick={this.show250contests} >$250</label>
+                    <label className= 'label-input' onClick={this.show500contests} >$500</label>
+                    <label className= 'label-input' onClick={this.show1000contests} >$1000</label>
+                </Row>
+            )
+            break;
+        case 50:
+            labels=(
+                <Row className = 'label-row'>       
+                    <label className= 'label-input' onClick={this.show25contests}>$25</label>
+                    <label className= 'label-input-clicked' onClick={this.show50contests} >$50</label>
+                    <label className= 'label-input' onClick={this.show100contests} >$100</label>
+                    <label className= 'label-input' onClick={this.show250contests} >$250</label>
+                    <label className= 'label-input' onClick={this.show500contests} >$500</label>
+                    <label className= 'label-input' onClick={this.show1000contests} >$1000</label>
+                </Row>
+            )        
+            break;
         
+        case 100:
+        labels=(
+                <Row className = 'label-row'>       
+                    <label className= 'label-input' onClick={this.show25contests}>$25</label>
+                    <label className= 'label-input' onClick={this.show50contests} >$50</label>
+                    <label className= 'label-input-clicked' onClick={this.show100contests} >$100</label>
+                    <label className= 'label-input' onClick={this.show250contests} >$250</label>
+                    <label className= 'label-input' onClick={this.show500contests} >$500</label>
+                    <label className= 'label-input' onClick={this.show1000contests} >$1000</label>
+                </Row>  
+        )      
+            break;
+        case 250:
+        labels=(
+                <Row className = 'label-row'>       
+                    <label className= 'label-input' onClick={this.show25contests}>$25</label>
+                    <label className= 'label-input' onClick={this.show50contests} >$50</label>
+                    <label className= 'label-input' onClick={this.show100contests} >$100</label>
+                    <label className= 'label-input-clicked' onClick={this.show250contests} >$250</label>
+                    <label className= 'label-input' onClick={this.show500contests} >$500</label>
+                    <label className= 'label-input' onClick={this.show1000contests} >$1000</label>
+                </Row>        
+        )
+            break;
+        case 500:
+        labels=(
+                <Row className = 'label-row'>       
+                    <label className= 'label-input' onClick={this.show25contests}>$25</label>
+                    <label className= 'label-input' onClick={this.show50contests} >$50</label>
+                    <label className= 'label-input' onClick={this.show100contests} >$100</label>
+                    <label className= 'label-input' onClick={this.show250contests} >$250</label>
+                    <label className= 'label-input-clicked' onClick={this.show500contests} >$500</label>
+                    <label className= 'label-input' onClick={this.show1000contests} >$1000</label>
+                </Row> 
+        )       
+            break;
+        case 1000:
+        labels=(
+                <Row className = 'label-row'>       
+                    <label className= 'label-input' onClick={this.show25contests}>$25</label>
+                    <label className= 'label-input' onClick={this.show50contests} >$50</label>
+                    <label className= 'label-input' onClick={this.show100contests} >$100</label>
+                    <label className= 'label-input' onClick={this.show250contests} >$250</label>
+                    <label className= 'label-input' onClick={this.show500contests} >$500</label>
+                    <label className= 'label-input-clicked' onClick={this.show1000contests} >$1000</label>
+                </Row>      
+        )  
+            break;                                    
+        default:
+            break;
+        }
+
+       
 
 
         return (
@@ -137,26 +221,13 @@ export default class Lobby extends React.Component {
                      <Row style ={{height:'20px'}}>
                      </Row>
 
-                {/*//////////////bullshit
-               
-                    <h1 style={{fontWeight:'bold',fontFamily:"Comic Sans MS"}}>Contest Lobby</h1>
-                    <Row>
-                         <Col xs={3} style={{'borderRight':' 1px dashed'}}>
-                            <h3>Notes</h3>
-                            <p style={{textAlign:'left',fontSize:'14px'}}>- All times are in <strong>CST</strong></p>
-                            <p style={{textAlign:'left',fontSize:'14px'}}>- No payment information required until leagues are set!</p>
-                        </Col>
-                        <Col xs={6} style={{'borderRight':' 1px dashed'}}>
-                            <h3>Ready to play?</h3>
-                            <p style={{fontSize:'18px'}}>Please join the contest of your choice for the best fantasy experience of your life! <strong>Thank You</strong> for choosing the Good Guys! </p>
-                        </Col>
-                         <Col xs={3}>
-                         </Col>
+
+                     {labels}
+                     <Row style={{height:'30px'}}>
                     </Row>
-                    ////////////END BULLSHIT*/}
 
 
-                        <Row className = ''>
+                        {/*<Row className = ''>
                             <Col xs={2} className='lobby-choose-sport-button'>
                                 <div onClick={this.show25contests} >$25</div>
                             </Col>
@@ -175,7 +246,7 @@ export default class Lobby extends React.Component {
                             <Col xs={2} className='lobby-choose-sport-button'>
                                 <div onClick={this.show1000contests}>$1000</div>
                             </Col>
-                        </Row>
+                        </Row>*/}
                         <Row>
                             {contestTable}
                         </Row>
@@ -185,3 +256,23 @@ export default class Lobby extends React.Component {
         )
     }
 }
+
+
+
+                {/*//////////////bullshit
+               
+                    <h1 style={{fontWeight:'bold',fontFamily:"Comic Sans MS"}}>Contest Lobby</h1>
+                    <Row>
+                         <Col xs={3} style={{'borderRight':' 1px dashed'}}>
+                            <h3>Notes</h3>
+                            <p style={{textAlign:'left',fontSize:'14px'}}>- All times are in <strong>CST</strong></p>
+                            <p style={{textAlign:'left',fontSize:'14px'}}>- No payment information required until leagues are set!</p>
+                        </Col>
+                        <Col xs={6} style={{'borderRight':' 1px dashed'}}>
+                            <h3>Ready to play?</h3>
+                            <p style={{fontSize:'18px'}}>Please join the contest of your choice for the best fantasy experience of your life! <strong>Thank You</strong> for choosing the Good Guys! </p>
+                        </Col>
+                         <Col xs={3}>
+                         </Col>
+                    </Row>
+                    ////////////END BULLSHIT*/}

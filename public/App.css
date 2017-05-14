@@ -940,5 +940,54 @@ br {
 	
 }
 
+.label-input{
+  display: inline-block;
+  /*margin: 0 0 -1px;*/
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+	width:10%;
+	font-size:24px;
+	border-bottom: 2px solid #EEEEEE;
+	margin-bottom: 0px !important;
+}
+
+.label-input:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  /*margin-right: 10px;*/
+}
+
+.label-input:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+.label-input-clicked {
+	display: inline-block;
+  /*margin: 0 0 -1px;*/
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #555;
+  /*border: 1px solid #ddd;*/
+  border-top: 2px solid orange;
+  border-bottom: 2px solid #FFFFFF;
+	border-right: 2px solid #EEEEEE;
+	border-left: 2px solid #EEEEEE;
+	width:10%;
+	font-size:24px;
+	background-color: #FFFFFF;
+	margin-bottom: 0px !important;
+}
+
+.label-row{
+	/*background-color: #F0F0F0;*/
+
+}
+
+
 
 
