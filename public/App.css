@@ -682,7 +682,7 @@ tbody tr:hover {
 	width: 70px;
   font-size: 12px !important;
   text-decoration: none !important;
-	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	font-family: "Arvo";
   color: #fff !important;
   position: relative !important;
   display: inline-block !important;
@@ -804,6 +804,7 @@ tbody tr:hover {
     color: #fff;
     font-size: 14px;
 		opacity:20;
+		font-family: "Arvo" !important;
 }
 
 .global-header-container {
@@ -992,6 +993,7 @@ br {
 }
 
 .contest-info-modal{
+
 	width: 80% !important;
 }
 
@@ -1003,5 +1005,30 @@ br {
 	cursor: pointer;
 }
 
+.contestInfoDraftButton{
+	height:200px;
+	width:300px;
+	background-color:#000088 !important;
+	padding-left: 100px;
+	font-size: 72px !important;
+}
 
+.contestInfoDraftButton:hover{
+	background-color:#0000FF !important;
+}
 
+.contestInfoAuctionButton{
+	height:200px;
+	width:300px;
+	background-color:#55AA55 !important;
+	padding-right: 100px;
+	font-size: 72px !important;
+}
+
+.contestInfoAuctionButton:hover{
+	background-color:#00FF00 !important;
+}
+
+.btn-default{
+	border: none !important;
+}

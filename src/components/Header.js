@@ -175,6 +175,7 @@ export default class Header extends React.Component {
 	      </div>
         <div>
         {screenDisplay}
+        {this.props.children}
         </div>
       </div>
     );
